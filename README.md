@@ -75,21 +75,25 @@ FROM scratch
 COPY --from=builder /app/slot-machine /slot-machine
 
 CMD ["/slot-machine"]
-
+```
 ## Надеюсь вы дочитали до этого момента ведь тут ответ на вопрос как же это чудо запустить
 Выполните эти команды и наслаждайтесь:
 
 ```bash
 git clone <ССЫЛКА_НА_РЕПОЗИТОРИЙ>
 cd <ИМЯ_РЕПОЗИТОРИЯ>
+```
 - Сборка
 ```bash
 docker build -t slot-machine .
+```
 - Запуск
 ```bash
 docker run -it --rm slot-machine
+```
 - Просмотр размера
 ```bash
  docker image ls slot-machine
-
+ ```
+---
 ##In this point, I remembered that it's better to write README.md in English, but it was too late :((((((
