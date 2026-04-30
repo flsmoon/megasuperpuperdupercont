@@ -95,5 +95,14 @@ docker run -it --rm slot-machine
 ```bash
  docker image ls slot-machine
  ```
+ ##Запуск с  Docker Compose
+  ## Запуск проекта
+
+Для первого запуска проекта вместе с базой данных выполните команду:
+```bash
+docker compose -f DockerCompose.yml up --build
+docker compose -f DockerCompose.yml run --rm game
+```
+
 ---
 ##In this point, I remembered that it's better to write README.md in English, but it was too late :((((((

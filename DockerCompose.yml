@@ -1,0 +1,33 @@
+services:
+  game:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: slotmachinegame
+    depends_on:
+      - db
+    stdin_open: true
+    tty: true
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: slotdb
+      DB_USER: slotuser
+      DB_PASSWORD: "1111"
+
+  db:
+    image: postgres:16
+    container_name: slotmachinedb
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: slotdb
+      POSTGRES_USER: slotuser
+      POSTGRES_PASSWORD: "1111"
+    volumes:
+      - pdata:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    ports:
+      - "5432:5432"
+
+volumes:
+  pdata:

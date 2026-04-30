@@ -1,10 +1,14 @@
-
+#include "Database.h"
 #include "SlotMachine.h"
 #include <iostream>
 #include <string>
 
 int main() {
     SlotMachine sm;
+    Database db;
+    std::string player_name;
+    std::cout<<" Enter your name: ";
+    std::cin >>player_name;
 
     std::cout << "----- LET'S GO GAMBLING -----\n";
 
@@ -33,7 +37,11 @@ int main() {
             continue;
         }
 
+        int balance_before=sm.getBalance();
         sm.spin(bet);
+        int balance_after=sm.getBalance();
+        int win=balance_after-balance_before+bet;
+        db.save_result(player_name,bet, win,balance_after);
     }
 
     std::cout << "---------- YOU DIED ---------\n";

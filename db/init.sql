@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS game_results (
+    id SERIAL PRIMARY KEY,
+    player_name TEXT NOT NULL,
+    bet INTEGER NOT NULL,
+    win INTEGER NOT NULL,
+    balance_after INTEGER NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
