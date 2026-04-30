@@ -98,7 +98,7 @@ docker run -it --rm slot-machine
  ##Запуск с  Docker Compose
   ## Запуск проекта
 
-Для первого запуска проекта вместе с базой данных выполните команду:
+Для первого запуска проекта вместе с базой данных выполните команды:
 ```bash
 docker compose -f DockerCompose.yml up --build
 docker compose -f DockerCompose.yml run --rm game
